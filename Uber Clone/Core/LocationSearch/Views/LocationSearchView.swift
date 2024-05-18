@@ -42,18 +42,24 @@ struct LocationSearchView: View {
                             .systemGray4))
                         .padding(.trailing)
                 }
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
+            .padding(.top, 64)
+            
+            Divider()
+                .padding(.vertical)
             
             //list view
             
             ScrollView() {
                 VStack(alignment: .leading) {
-                    ForEach(0 ..< 20, id: \.self) { locations in
-                        
+                    ForEach(0 ..< 20, id: \.self) { _ in
+                        LocationSearchResultCell()
                     }
                 }
             }
         }
+        .background(.white)
     }
 }
 

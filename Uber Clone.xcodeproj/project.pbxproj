@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7556BEF2BF8592A00157F84 /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7556BEE2BF8592A00157F84 /* LocationSearchResultCell.swift */; };
 		E7DDAF5F2BF6F2490050E6DF /* Uber_CloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDAF5E2BF6F2490050E6DF /* Uber_CloneApp.swift */; };
 		E7DDAF632BF6F24A0050E6DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DDAF622BF6F24A0050E6DF /* Assets.xcassets */; };
 		E7DDAF662BF6F24A0050E6DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DDAF652BF6F24A0050E6DF /* Preview Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7556BEE2BF8592A00157F84 /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 		E7DDAF5B2BF6F2490050E6DF /* Uber Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DDAF5E2BF6F2490050E6DF /* Uber_CloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uber_CloneApp.swift; sourceTree = "<group>"; };
 		E7DDAF622BF6F24A0050E6DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				E7DDAF812BF7142C0050E6DF /* LocationSearchActivationView.swift */,
 				E7DDAF852BF716D70050E6DF /* LocationSearchView.swift */,
+				E7556BEE2BF8592A00157F84 /* LocationSearchResultCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				E7DDAF772BF70F280050E6DF /* UberMapViewRepresentable.swift in Sources */,
 				E7DDAF5F2BF6F2490050E6DF /* Uber_CloneApp.swift in Sources */,
 				E7DDAF822BF7142C0050E6DF /* LocationSearchActivationView.swift in Sources */,
+				E7556BEF2BF8592A00157F84 /* LocationSearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
