@@ -17,8 +17,8 @@ class LocationSearchViewModel: NSObject, ObservableObject {
     
     //MARK: - Properties
     @Published var results = [MKLocalSearchCompletion]() //This is the array which will get initialised with all the location matches, once the user stops searching.
+    @Published var selectedLocationCoordinate: CLLocationCoordinate2D?
     private let searchCompleter = MKLocalSearchCompleter() //This is the object which will actually complete the search.
-    var selectedLocation: String?
     var queryFragment: String = "" { //This is the user input for the location search.
         didSet {
             self.searchCompleter.queryFragment = self.queryFragment
@@ -35,8 +35,24 @@ class LocationSearchViewModel: NSObject, ObservableObject {
     /*
      This is a setter function to set the location once user selects a location from the view.
      */
-    public func selectLocation(_ location: String) {
-        self.selectedLocation = location
+    public func selectLocation(_ localSearch: MKLocalSearchCompletion) {
+        self.locationSearch(forLocalSearchCompletion: localSearch) { response, error in
+            if let error = error {
+                print("DEBUG: Location search failed with \(error)")
+                return
+            }
+            
+            guard let item = response?.mapItems.first else { return }
+            let coordinate = item.placemark.coordinate
+            self.selectedLocationCoordinate = coordinate
+        }
+    }
+    
+    public func locationSearch(forLocalSearchCompletion localSearch: MKLocalSearchCompletion, completion: @escaping MKLocalSearch.CompletionHandler) {
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = localSearch.title.appending(localSearch.subtitle)
+        let executeSearchRequest = MKLocalSearch(request: searchRequest)
+        executeSearchRequest.start(completionHandler: completion)
     }
 }
 

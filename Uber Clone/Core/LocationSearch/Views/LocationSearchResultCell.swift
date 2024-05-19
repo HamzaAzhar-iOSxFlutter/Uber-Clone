@@ -23,6 +23,7 @@ struct LocationSearchResultCell: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(self.title)
                     .font(.body)
+                    .foregroundColor(.black)
                 
                 Text(self.subTitle)
                     .font(.system(size: 15))
